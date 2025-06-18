@@ -1,0 +1,49 @@
+# Project: bicycle_sys
+# Makefile created by Red Panda C++ 3.1.2871
+
+CXX      = "g++.exe"
+CC       = "gcc.exe"
+WINDRES  = "windres.exe"
+RM       = del /q /f
+CD       = cd /d
+LIBS     = "-Wl,--stack,16777216" "-s" "-static"
+INCS     = 
+CXXINCS  = 
+CXXFLAGS = $(CXXINCS) "-Ofast" "-pipe" "-fexec-charset=gbk"
+CFLAGS   = $(INCS) "-Ofast" "-pipe" "-fexec-charset=gbk"
+WINDRESFLAGS = 
+RES      = bicycle_sys_private.res
+OBJ      = menu.o util.o menu_print.o service.o main.o $(RES)
+BIN      = bicycle_sys.exe
+LINKOBJ  = "menu.o" "util.o" "menu_print.o" "service.o" "main.o" "bicycle_sys_private.res"
+CLEANOBJ = "menu.o" "util.o" "menu_print.o" "service.o" "main.o" "bicycle_sys_private.res" "bicycle_sys.exe"
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	-$(RM) $(CLEANOBJ) >NUL 2>&1
+
+bicycle_sys.exe: $(OBJ)
+
+	$(CC) $(LINKOBJ) -o "bicycle_sys.exe" $(LIBS)
+
+menu.o: menu.c import.h menu.h menu_print.h
+	$(CC) -c "menu.c" -o "menu.o" $(CFLAGS)  -finput-charset=UTF-8 -fexec-charset=gbk
+
+util.o: util.c import.h util.h menu_print.h
+	$(CC) -c "util.c" -o "util.o" $(CFLAGS)  -finput-charset=UTF-8 -fexec-charset=gbk
+
+menu_print.o: menu_print.c import.h menu_print.h
+	$(CC) -c "menu_print.c" -o "menu_print.o" $(CFLAGS)  -finput-charset=UTF-8 -fexec-charset=gbk
+
+service.o: service.c import.h menu_print.h service.h
+	$(CC) -c "service.c" -o "service.o" $(CFLAGS)  -finput-charset=UTF-8 -fexec-charset=gbk
+
+main.o: main.c import.h menu.h util.h miku.h menu_print.h service.h
+	$(CC) -c "main.c" -o "main.o" $(CFLAGS)  -finput-charset=UTF-8 -fexec-charset=gbk
+
+bicycle_sys_private.res: bicycle_sys_private.rc 
+	$(WINDRES) -i "bicycle_sys_private.rc" --input-format=rc -o "bicycle_sys_private.res" -O coff $(WINDRESFLAGS) 
+

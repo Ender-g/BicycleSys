@@ -1,0 +1,57 @@
+[
+    {
+        "caretX": 10,
+        "caretY": 60,
+        "filename": "D:/DevProjects/class_work/bicycle_sys/menu_print.c",
+        "focused": false,
+        "isOpen": false,
+        "left": 0,
+        "top": 1672
+    },
+    {
+        "caretX": 16,
+        "caretY": 36,
+        "filename": "D:/DevProjects/class_work/bicycle_sys/util.c",
+        "focused": false,
+        "isOpen": false,
+        "left": 0,
+        "top": 684
+    },
+    {
+        "caretX": 23,
+        "caretY": 8,
+        "filename": "D:/DevProjects/class_work/bicycle_sys/menu.c",
+        "focused": false,
+        "isOpen": false,
+        "left": 0,
+        "top": 76
+    },
+    {
+        "caretX": 31,
+        "caretY": 11,
+        "filename": "D:/DevProjects/class_work/bicycle_sys/service.c",
+        "focused": false,
+        "isOpen": false,
+        "left": 0,
+        "top": 3116
+    },
+    {
+        "caretX": 7,
+        "caretY": 37,
+        "filename": "D:/DevProjects/class_work/bicycle_sys/main.c",
+        "focused": false,
+        "isOpen": false,
+        "left": 0,
+        "top": 680
+    },
+    {
+        "caretX": 32,
+        "caretY": 10,
+        "filename": "D:/DevProjects/class_work/bicycle_sys/miku.h",
+        "focused": true,
+        "isOpen": true,
+        "left": 0,
+        "order": 0,
+        "top": 680
+    }
+]
